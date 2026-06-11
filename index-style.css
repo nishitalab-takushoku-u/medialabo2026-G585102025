@@ -1,0 +1,39 @@
+/* ページ全体 */
+body {
+  font-family: system-ui;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+h1 {
+  background-color: #3f3faf;
+  color: white;
+  padding: 15px 20px;
+}
+
+h2 {
+  color: #3f3faf;
+  border-bottom: 3px solid #3f3faf;
+  padding-bottom: 5px;
+}
+
+h3 {
+  color: #555;
+  border-left: 5px solid #aaaaee;
+  padding-left: 10px;
+}
+
+p {
+  line-height: 1.8;
+}
+
+a {
+  color: #3f3faf;
+}
+
+a:hover {
+  color: orange;
+}
