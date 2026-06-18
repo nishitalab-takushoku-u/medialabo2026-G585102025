@@ -1,54 +1,49 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>世界の天気 - 検索結果</title>
-</head>
-<body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>世界の天気予報</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>世界の天気予報</h1>
 
-  <h1>世界の天気 検索結果</h1>
-  <p>検索結果：1件</p>
+    <table border="1">
+      <tr>
+        <th>都市名</th>
+        <td id="city">-</td>
+      </tr>
+      <tr>
+        <th>天気</th>
+        <td id="weather">-</td>
+      </tr>
+      <tr>
+        <th>最低気温</th>
+        <td id="temp_min">-</td>
+      </tr>
+      <tr>
+        <th>最高気温</th>
+        <td id="temp_max">-</td>
+      </tr>
+      <tr>
+        <th>湿度</th>
+        <td id="humidity">-</td>
+      </tr>
+      <tr>
+        <th>風速</th>
+        <td id="wind_speed">-</td>
+      </tr>
+      <tr>
+        <th>風向</th>
+        <td id="wind_deg">-</td>
+      </tr>
+    </table>
 
-  <h2>北京市</h2>
+    <br>
+    <!-- 課題6-1: ボタンを押すと天気情報が表示される -->
+    <button id="btn">天気を表示する</button>
 
-  <table border="1">
-    <tr>
-      <th>項目</th>
-      <th>値</th>
-    </tr>
-    <tr>
-      <td>天気</td>
-      <td>曇りがち</td>
-    </tr>
-    <tr>
-      <td>最高気温</td>
-      <td>9.94 °C</td>
-    </tr>
-    <tr>
-      <td>最低気温</td>
-      <td>9.94 °C</td>
-    </tr>
-    <tr>
-      <td>湿度</td>
-      <td>14 %</td>
-    </tr>
-    <tr>
-      <td>風速</td>
-      <td>2.65 m/s</td>
-    </tr>
-    <tr>
-      <td>風向</td>
-      <td>197 °</td>
-    </tr>
-    <tr>
-      <td>経度</td>
-      <td>116.3972</td>
-    </tr>
-    <tr>
-      <td>緯度</td>
-      <td>39.9075</td>
-    </tr>
-  </table>
-
-</body>
+    <!-- weather.js の読み込み -->
+    <script src="weather.js"></script>
+  </body>
 </html>
