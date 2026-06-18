@@ -12,7 +12,13 @@ function print(data) {
 
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {
-
+   document.getElementById("city").textContent = data.name;
+   document.getElementById("weather").textContent = data.weather[0].description;
+    document.getElementById("temp_min").textContent = data.main.temp_min;
+    document.getElementById("temp_max").textContent = data.main.temp_max;
+    document.getElementById("humidity").textContent = data.main.humidity;
+    document.getElementById("wind_speed").textContent = data.wind.speed;
+    document.getElementById("wind_deg").textContent = data.wind.deg;
 }
 
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
