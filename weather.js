@@ -49,13 +49,24 @@ if (button) {
 function sendRequest() {
     const cityIdInput = document.getElementById('city-id');
     const cityId = cityIdInput ? cityIdInput.value.trim() : '1816670';
-    const data = findCityDataById(cityId);
-    if (data) {
-        showResult(data);
-    } else {
-        showError(new Error('指定された都市IDのデータはありません'));
-    }
-    finish();
+    const url = `https://www.nishita-lab.org/web-contents/jsons/openweather/${encodeURIComponent(cityId)}.json`;
+
+    fetch(url)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then((json) => {
+            showResult(json);
+        })
+        .catch((err) => {
+            showError(err);
+        })
+        .finally(() => {
+            finish();
+        });
 }
 function showResult(resp) {
     const data = typeof resp === 'object' ? resp : JSON.parse(resp);
