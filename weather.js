@@ -51,22 +51,22 @@ function sendRequest() {
     const url = `https://www.nishita-lab.org/web-contents/jsons/openweather/${encodeURIComponent(cityId)}.json`;
 
     // 通信開始
-    axios.get(url)
-        .then(showResult)   // 通信成功
-        .catch(showError)   // 通信失敗
-        .then(finish);      // 通信の最後の処理
+    fetch(url)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            showResult(data);
+        })
+        .catch(showError)
+        .finally(finish);
 }
 
 // 通信が成功した時の処理
-function showResult(resp) {
-    // サーバから送られてきたデータを取得
-    let data = resp.data;
-
-    // data が文字列型なら、オブジェクトに変換する
-    if (typeof data === 'string') {
-        data = JSON.parse(data);
-    }
-
+function showResult(data) {
     print(data);
     printDom(data);
 }
