@@ -38,6 +38,7 @@ a {
 #zentai div {
   background-color: #ffffcc;
   border: 1px solid #cccc88;
+  margin: 0;
   padding: 5px;
 }
 
